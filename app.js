@@ -1,5 +1,10 @@
 const http = require('http');
+const express  = require('express');
 
-const server = http.createServer();
+const app = express();
+app.use((req,res,next) => {
+    console.log('hello there!')
+})
+const server = http.createServer(app);
 
 server.listen(3000);
